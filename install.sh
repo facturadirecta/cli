@@ -1,6 +1,6 @@
 #!/bin/sh
 # Instalador de FacturaDirecta CLI
-# Uso: curl -fsSL https://raw.githubusercontent.com/facturadirecta/facturadirecta-cli/main/scripts/install.sh | sh
+# Uso: curl -fsSL https://raw.githubusercontent.com/facturadirecta/cli/main/install.sh | sh
 #
 # Variables de entorno opcionales:
 #   INSTALL_DIR    — directorio de instalación (default: ~/.local/bin)
@@ -8,7 +8,7 @@
 
 set -e
 
-REPO="facturadirecta/facturadirecta-cli"
+REPO="facturadirecta/cli"
 BINARY="facturadirecta"
 DEFAULT_INSTALL_DIR="$HOME/.local/bin"
 INSTALL_DIR="${INSTALL_DIR:-$DEFAULT_INSTALL_DIR}"
@@ -190,9 +190,9 @@ main() {
     info "$BINARY $installed_version instalado correctamente."
     info ""
     info "Primeros pasos:"
-    info "  $BINARY login              # Iniciar sesión"
-    info "  $BINARY profile            # Ver empresas disponibles"
+    info "  $BINARY setup              # Configuración guiada"
     info "  $BINARY invoices list      # Listar facturas"
+    info "  $BINARY --help             # Ver todos los comandos"
   else
     error "La instalación falló. El binario no se ejecuta correctamente."
   fi
